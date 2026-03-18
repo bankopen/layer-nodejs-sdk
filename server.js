@@ -281,7 +281,7 @@ function create_hash(data,accesskey,secretkey){
 	Object.keys(data).forEach(function(key) {
 		hash_string += '|' + data[key];
 	});
-    var cryp = crypto.createHash('sha256',secretkey);
+    var cryp = crypto.createHmac('sha256',secretkey);
 	cryp.update(hash_string);
 	return cryp.digest('hex');    
 }
